@@ -22,3 +22,19 @@ function agregarAmigo() {
         actualizarListaAmigos();
     }
 }
+
+// Función para actualizar la lista de amigos y mostrarla en el front
+function actualizarListaAmigos() {
+    // Seleccionamos el elemento de la lista donde se mostrarán los amigos
+    const listaAmigos = document.getElementById('listaAmigos');
+    
+    // Limpiamos la lista antes de volver a actualizarla
+    listaAmigos.innerHTML = '';
+
+    // Recorremos el array de amigos y agregamos cada uno como un <li>
+    amigos.forEach(amigo => {
+        const li = document.createElement('li');
+        li.textContent = amigo;  // Asignamos el nombre del amigo al <li>
+        listaAmigos.appendChild(li);  // Añadimos el <li> a la lista
+    });
+}
